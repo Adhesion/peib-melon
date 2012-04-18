@@ -12,7 +12,9 @@ var gameResources = [
                     { name: "background3", type: "image", src: "data/background3.png" },
                     { name: "background4", type: "image", src: "data/background4.png" },
                     { name: "level1",      type: "tmx",   src: "data/level1.tmx" },
+                    { name: "portal",      type: "image", src: "data/portal.png" },
                     { name: "playership",  type: "image", src: "data/playership.png" },
+                    { name: "bullet",      type: "image", src: "data/bullet.png" }
                     ];
 
 var jsApp =
@@ -32,7 +34,6 @@ var jsApp =
         me.loader.preload( gameResources );
         
         me.state.change( me.state.LOADING );
-        alert( "loading?" );
     },
     
     loaded: function()
@@ -61,6 +62,5 @@ var PlayScreen = me.ScreenObject.extend(
 
 window.onReady( function()
 {
-    alert( "fskjdfslkjf" );
     jsApp.onload();
 });
