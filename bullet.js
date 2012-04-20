@@ -26,20 +26,21 @@ var Bullet = me.ObjectEntity.extend(
         this.gravity = 0.0;
         
         this.counter = 0;
-        this.counterMax = 50;
+        this.counterMax = 25;
     },
-    
+       
     update: function()
     {
         this.updateMovement();        
-        this.parent( this );
         
         // check collision
         
         this.counter++;
         if ( this.counter > this.counterMax )
         {
-            me.game.remove( this );
+            me.game.remove( this ).defer();
         }
+        
+        return this.parent( this );
     }
 });
